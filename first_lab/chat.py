@@ -1,3 +1,4 @@
+import sys
 import json
 import socket
 import Tkinter
@@ -54,6 +55,7 @@ class Listener(object):
             return message, sender
         except socket.error as e:
             return None, None
+
 
 class Chat(object):
 
@@ -129,5 +131,7 @@ class Chat(object):
 
 
 if __name__ == '__main__':
+    reload(sys)
+    sys.setdefaultencoding('utf-8')
     chat = Chat()
     chat.run()
