@@ -2,60 +2,57 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/content.css" rel="stylesheet">
+    <link href="styles/menu.css" rel="stylesheet">
     <title>Тренинг по JavaScript</title>
 </head>
 
 <body>
-    <table align="center" cellpadding="30">
-        <tr>
-            <td align="center">
-                <img src="images/js.png" width="128" height="128" align="top"/>
-            </td>
-            <td  align="center">
-                <font size="9" face="Calibri">
-                    Лучший в мире тренинг по JavaScript
-                </font>
-            </td>
-        </tr>
-    </table>
+    <header>
+        <div>
+            <div class="header-image">
+                <img src="images/js.png" width="256" align="top"/>
+            </div>
+            <div class="header-text">
+                 Тренинг Javascript
+            </div>
+        </div>
+    </header>
 
-    <table width="98%" align="center" cellpadding="40" bgcolor="#F0F5F0">
-        <tr>
-            <td width="20%">
+    <menu class="main-menu">
+        <a class="menu-item" href="#about">О тренинге</a>
+        <a class="menu-item" href="#themes">Темы</a>
+        <a class="menu-item" href="#requirements">Требования</a>
+        <a class="menu-item" href="#holding">Проведение</a>
+    </menu>
 
-                <font color="#B0B0B0">
-                        <h4>
-                            <pre>
-                                <i>
+    <main>
+        <div class="content">
+            <article class="about" id="about">
+                <article class="subheader-text">
+                    <h1>
+                        О тренинге
+                    </h1>
+                    На тренинге изучается синтаксис языка JavaScript.
+                    Рассматриваются общепринятые стандарты и лучшие практики.
+                    Уделяется значительное внимание сложным моментам и
+                    тонкостям языка. Тренинг рассчитан на практикующих
+                    программистов, желающих изучить язык JavaScript.
+                </article>
+                <pre class="code">
 Object.prototype.each = function(f) {
     for (var prop in this) {
         var value = this[prop];
         f.call(value, prop, value);
     }
 }
-                            </i>
-                        </pre>
-                    </h4>
-                </font>
-            </td>
 
-            <td rowspan="2">
-                <h3 align="center">
-                    <font size="5" face="Calibri">
-                        На тренинге изучается синтаксис языка JavaScript.
-                        Рассматриваются общепринятые стандарты и лучшие практики.
-                        Уделяется значительное внимание сложным моментам и
-                        тонкостям языка. Тренинг рассчитан на практикующих
-                        программистов, желающих изучить язык JavaScript.
-                    </font>
-                </h3>
-            </td>
 
-            <td>
-                <h4>
-                    <font color="#B0B0B0">
-                        <pre>
-                            <i>
+
+
+
 function CoffeeMachine(power, capacity) {
     var waterAmount = 0;
     var WATER_HEAT_CAPACITY = 4200;
@@ -64,141 +61,99 @@ function CoffeeMachine(power, capacity) {
         setTimeout(onReady, getTimeToBoil());
     }
 };
-                            </i>
-                        </pre>
-                    </font>
-                </h4>
-            </td>
-        </tr>
-    </table>
+                </pre>
+            </article>
 
+            <article class="themes" id="themes">
+                <h1>Темы</h1>
+                <ol type="1">
+                    <li>
+                        <p>
+                            Современный JavaScript. HTML5 APIs.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            HTML. От отдельных тегов до Semantic Web.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            CSS3. Подходы к верстке страницы. Анимация. Responsive
+                            Web Design. CSS препроцессоры LESS и Stylus.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Разработка через тестирование в JavaScript.
+                            Юнит-тестирование клиентского кода. Автоматизированное
+                            функциональное тестирование.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Архитектура приложения. Single Page Application. AngularJS.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Структура проекта. Модульность. Управление зависимостями и
+                            ресурсами. Grunt. AMD, RequireJS.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Инструменты современного веб-разработчика. Sublime Text.
+                            Web Storm. Google Chrome Developer Tools. Бонус: Git и Git Flow.
+                        </p>
+                    </li>
+                </ol>
+            </article>
 
-    <table cellpadding="20" cellspacing="20">
-        <tr>
-            <td bgcolor="#F7F7F0">
-                <font size = "5" face="Calibri">
-                    <p align="center">
-                        Данный тренинг посвящён актуальным подходам, технологиям и
-                        инструментальным средствам разработки на Javascript.
-                        Посещая занятия данного курса, вы узнаете о последних тенденциях
-                        и трендах в JavaScript (с фокусом на ООП), познакомитесь с HTML,
-                        CSS и HTTP; научитесь выполнять юнит-тестирование клиентского
-                        кода; познакомитесь с архитектурой приложений и структурой
-                        типовых проектов, а также получите представление об инструментах
-                        современного Javacript-разработчик.
-                    </p>
-                </font>
-            </td>
-            <td bgcolor="#F7F7F0">
-                <font size="5" face="Calibri">
-                    <h4>Требования к кандидатам:</h4>
-                    <ol type="1">
-                        <li>
-                            <p>
-                                Знание основ программирования, ООП и алгоритмизации;
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Технический английский (на уровне уверенного чтения технических документов).
-                            </p>
-                        </li>
-                    </ol>
-                </font>
-            </td>
-        </tr>
+            <article class="requirements" id="requirements">
+                <h1>Требования к кандидатам</h1>
+                <ol type="1">
+                    <li>
+                        <p>
+                            Знание основ программирования, ООП и алгоритмизации;
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Технический английский
+                            (на уровне уверенного чтения технических документов).
+                        </p>
+                    </li>
+                </ol>
+            </article>
 
-        <tr>
-            <td bgcolor="#F7F7F0" width="50%" rowspan="2">
-                <font size = "5" face="Calibri">
-                    <h4>Темы, которые будут затронуты на тренинге:</h4>
-                    <ol type="1">
-                        <li>
-                            <p>
-                                Современный JavaScript. HTML5 APIs.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                HTML. От отдельных тегов до Semantic Web.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                CSS3. Подходы к верстке страницы. Анимация. Responsive
-                                Web Design. CSS препроцессоры LESS и Stylus.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Разработка через тестирование в JavaScript.
-                                Юнит-тестирование клиентского кода. Автоматизированное
-                                функциональное тестирование.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Архитектура приложения. Single Page Application. AngularJS.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Структура проекта. Модульность. Управление зависимостями и
-                                ресурсами. Grunt. AMD, RequireJS.
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Инструменты современного веб-разработчика. Sublime Text.
-                                Web Storm. Google Chrome Developer Tools. Бонус: Git и Git Flow.
-                            </p>
-                        </li>
-                    </ol>
-                </font>
-            </td>
-            <td bgcolor="#F7F7F0">
-                <font size="5" face="Calibri">
-                    <h4>Чтобы стать слушателем необходимо:</h4>
-                    <ol>
-                        <li>
-                            <p>
-                                Заполнить анкету для предварительной регистрации на нашем сайте в разделе Карьера - Тренинги
-                            </p>
-                        </li>
-                    </ol>
-                </font>
-            </td>
-        </tr>
-
-        <tr>
-            <td bgcolor="#F7F7F0">
-                <font size="5" face="Calibri">
-                    <h4>Информация о проведении:</h4>
-                    <ul type="none">
-                        <li>
-                            <p>
-                                Периодичность занятий: 2-3 занятия в неделю вечером (время будет уточняться перед непосредственным стартом тренинга)
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Место проведения:  Радиальная, 40
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Продолжительность тренинга: 8 недель
-                            </p>
-                        </li>
-                        <li>
-                            <p>
-                                Количество слушателей в группе: 25 человек
-                            </p>
-                        </li>
-                    </ul>
-                </font>
-            </td>
-        </tr>
-    </table>
+            <article class="holding-info" id="holding">
+                <h1>Информация о проведении</h1>
+                <ul>
+                    <li>
+                        <p>
+                            Периодичность занятий: 2-3 занятия в неделю вечером
+                            (время будет уточняться перед непосредственным стартом тренинга)
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Место проведения:  Радиальная, 40
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Продолжительность тренинга: 8 недель
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Количество слушателей в группе: 25 человек
+                        </p>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </main>
 </body>
 </html>
