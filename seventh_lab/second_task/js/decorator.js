@@ -19,6 +19,15 @@ function typeCheck(func, type) {
 }
 
 
+function parseNumber(value) {
+    var intValue = +value;
+    if (isNaN(intValue)) {
+        return value;
+    }
+    return intValue;
+}
+
+
 function avg() {
     var sum = 0;
     for (var i = 0; i < arguments.length; i++) {
@@ -28,4 +37,16 @@ function avg() {
 }
 
 
-alert(typeCheck(avg, "number")(12, 43))
+values = [];
+for (var i = 0; i < 5; i++) {
+    value = parseNumber(prompt("Введите значение:"));
+    values[i] = value;
+}
+
+try {
+    typeCheckedAvg = typeCheck(avg, "number");
+    alert(typeCheckedAvg(values[0], values[1], values[2], values[3], values[4]));
+}
+catch (e) {
+    alert(e.message);
+}
