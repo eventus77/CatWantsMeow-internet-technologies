@@ -8,7 +8,7 @@ function Task(name, description, start_date, end_date, subTasks) {
 
 Task.prototype.addSubTask = function (task) {
     this.subTasks.push(task);
-}
+};
 
 Task.prototype.toString = function () {
     return this.name + "(" + this.description + "): " + this.start_date + " - " + this.end_date;
