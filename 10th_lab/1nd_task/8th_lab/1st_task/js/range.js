@@ -1,5 +1,5 @@
 function parseInt(value) {
-    var intValue = +value;
+    let intValue = +value;
     if (isNaN(intValue)) {
         throw new Error(value + " is not a number");
     }
@@ -10,12 +10,12 @@ function parseInt(value) {
 function range(start, stop, step) {
     values = [];
     if (start < stop) {
-        for (var value = start; value <= stop; value += step) {
+        for (let value = start; value <= stop; value += step) {
             values.push(value);
         }
     }
     else {
-        for (var value = start; value >= stop; value += step) {
+        for (let value = start; value >= stop; value += step) {
             values.push(value);
         }
     }

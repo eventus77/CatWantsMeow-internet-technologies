@@ -5,9 +5,9 @@ function randomRange(min, max) {
 
 function createMatrix(n, m) {
     matrix = [];
-    for (var i = 0; i < n; i++) {
+    for (let i = 0; i < n; i++) {
         matrix[i] = [];
-        for (var j = 0; j < m; j++) {
+        for (let j = 0; j < m; j++) {
             matrix[i][j] = randomRange(0, 100);
         }
     }
@@ -21,13 +21,13 @@ function matrixAddition(a, b) {
     }
 
     c = [];
-    for (var i = 0; i < a.length; i++) {
+    for (let i = 0; i < a.length; i++) {
         if (a[i].length != b[i].length) {
             throw new Error("Размерности матриц не совпадают")
         }
 
         c[i] = [];
-        for (var j = 0; j < a[i].length; j++) {
+        for (let j = 0; j < a[i].length; j++) {
             c[i][j] = a[i][j] + b[i][j];
         }
     }
@@ -37,13 +37,13 @@ function matrixAddition(a, b) {
 
 function printMatrix(a, elemId) {
     html = "<table cellpadding='10'>"
-    for (var i = 0; i < a.length; i++) {
+    a.forEach((row, i, a) => {
         html += "<tr>";
-        for (var j = 0; j < a[i].length; j++) {
-            html += "<td>" + a[i][j] + "</td>";
-        }
+        row.forEach((elem, i, row) => {
+            html += "<td>" + elem + "</td>";
+        })
         html += "</tr>";
-    }
+    })
     html += "<table>";
     document.getElementById(elemId).innerHTML = html;
 }

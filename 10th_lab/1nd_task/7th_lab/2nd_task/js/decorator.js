@@ -1,20 +1,18 @@
 function numberCheck(func) {
-    return function(param) {
-        if (typeof(param) != "number") {
+    return (arg) =>  {
+        if (typeof(param) != "number")
             throw Error(param + " is not a number");
-        }
         return func(param);
     }
 }
 
 function typeCheck(func, type) {
-    return function() {
-        for (var i = 0; i < arguments.length; i++) {
-            if (typeof(arguments[i]) != type) {
-                throw Error("Parameter " + arguments[i] + " is not " + type);
-            }
-        }
-        return func.apply(null, arguments);
+    return (...args) => {
+        args.forEach((arg, i, args) => {
+            if (typeof(arg) != type)
+                throw new Error("Argument " + arg + " is not " + type)
+        });
+        return func(...args);
     }
 }
 
@@ -28,17 +26,13 @@ function parseNumber(value) {
 }
 
 
-function avg() {
-    var sum = 0;
-    for (var i = 0; i < arguments.length; i++) {
-        sum += arguments[i];
-    }
-    return sum / arguments.length;
+function avg(...numbers) {
+    return numbers.reduce((sum, elem) => { return sum + elem / numbers.length }, 0)
 }
 
 
 values = [];
-for (var i = 0; i < 5; i++) {
+for (let i = 0; i < 5; i++) {
     value = parseNumber(prompt("Введите значение:"));
     values[i] = value;
 }

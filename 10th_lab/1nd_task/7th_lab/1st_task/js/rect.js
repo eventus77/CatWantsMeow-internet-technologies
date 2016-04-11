@@ -49,10 +49,10 @@ function isIn(point, rect) {
 
 try {
     points = [{}, {}, {}, {}];
-    for (var i = 0; i < points.length; i++) {
+    points.forEach((point, i, points) => {
         points[i].x = parseNumber(prompt('Введите x' + (i + 1)));
         points[i].y = parseNumber(prompt('Введите y' + (i + 1)));
-    }
+    })
 
     rect = isRectangle(points);
     if (!rect) throw new Error("Введенные точки не образуют прямоугольник");
